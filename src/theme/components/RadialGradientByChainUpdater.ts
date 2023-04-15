@@ -50,10 +50,8 @@ export default function RadialGradientByChainUpdater(): null {
       case SupportedChainId.ARBITRUM_ONE:
       case SupportedChainId.ARBITRUM_GOERLI: {
         setBackground(backgroundResetStyles)
-        const arbitrumLightGradient =
-          'radial-gradient(100% 100% at 50% 0%, rgba(205, 232, 251, 0.7) 0%, rgba(252, 243, 249, 0.6536) 49.48%, rgba(255, 255, 255, 0) 100%), #FFFFFF'
-        const arbitrumDarkGradient =
-          'radial-gradient(100% 100% at 50% 0%, rgba(10, 41, 75, 0.7) 0%, rgba(34, 30, 48, 0.6536) 49.48%, rgba(31, 33, 40, 0) 100%), #0D0E0E'
+        const arbitrumLightGradient = 'radial-gradient(ellipse at top, rgba(225,238,195,1) 0%, rgba(240,80,83,1) 100%)'
+        const arbitrumDarkGradient = 'radial-gradient(ellipse at top, rgba(225,238,195,1) 0%, rgba(240,80,83,1) 100%)'
         backgroundRadialGradientElement.style.background = darkMode ? arbitrumDarkGradient : arbitrumLightGradient
         break
       }
