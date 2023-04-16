@@ -123,13 +123,13 @@ const TxCompleteModal = () => {
                 shouldLogImpression
               >
                 <Box className={styles.successModal} onClick={stopPropagation}>
-                  <UniIcon color={vars.color.pink400} width="36" height="36" className={styles.uniLogo} />
+                  <UniIcon color={vars.color.black} width="36" height="36" className={styles.uniLogo} />
                   <Box display="flex" flexWrap="wrap" width="full" height="min">
                     <h1 className={styles.title}>
                       <Trans>Complete!</Trans>
                     </h1>
                     <p className={styles.subHeading}>
-                      <Trans>Uniswap has granted your wish!</Trans>
+                      <Trans>Minerva has granted your wish!</Trans>
                     </p>
                   </Box>
                   <UploadLink onClick={shareTweet} target="_blank">
@@ -211,7 +211,7 @@ const TxCompleteModal = () => {
                       <LightningBoltIcon color="pink" />
                       <p className={styles.subtitle}>Instant Refund</p>
                       <p className={styles.interStd}>
-                        Uniswap returned{' '}
+                        Minerva returned{' '}
                         <span style={{ fontWeight: '700' }}>{formatEthPrice(totalRefundValue.toString())} ETH</span>{' '}
                         back to your wallet for unavailable items.
                       </p>

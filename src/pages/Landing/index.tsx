@@ -156,7 +156,7 @@ const LandingButton = styled(BaseButton)`
 `
 
 const ButtonCTA = styled(LandingButton)`
-  background: linear-gradient(93.06deg, #330a5a 2.66%, #f05053 98.99%);
+  background: linear-gradient(93.06deg, #f05053 2.66%, #330a5a 98.99%);
   border: none;
   color: ${({ theme }) => theme.white};
   transition: ${({ theme }) => `all ${theme.transition.duration.medium} ${theme.transition.timing.ease}`};
@@ -347,20 +347,10 @@ export default function Landing() {
           </GlowContainer>
           <ContentContainer isDarkMode={isDarkMode}>
             <TitleText isDarkMode={isDarkMode}>
-              {shouldDisableNFTRoutes ? (
-                <Trans>Trade crypto with confidence</Trans>
-              ) : (
-                <Trans>Trade crypto and NFTs with confidence</Trans>
-              )}
+              {shouldDisableNFTRoutes ? <Trans>MINERVA</Trans> : <Trans>Minerva</Trans>}
             </TitleText>
             <SubTextContainer>
-              <SubText>
-                {shouldDisableNFTRoutes ? (
-                  <Trans>Buy, sell, and explore tokens</Trans>
-                ) : (
-                  <Trans>Buy, sell, and explore tokens and NFTs</Trans>
-                )}
-              </SubText>
+              <SubText>{shouldDisableNFTRoutes ? <Trans>Sterling v2</Trans> : <Trans>Sterling v2</Trans>}</SubText>
             </SubTextContainer>
             <ActionsContainer>
               <TraceEvent
