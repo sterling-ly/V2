@@ -350,7 +350,7 @@ export default function Landing() {
               {shouldDisableNFTRoutes ? <Trans>MINERVA</Trans> : <Trans>Minerva</Trans>}
             </TitleText>
             <SubTextContainer>
-              <SubText>{shouldDisableNFTRoutes ? <Trans>Sterling v2</Trans> : <Trans>Sterling v2</Trans>}</SubText>
+              <SubText>{shouldDisableNFTRoutes ? <Trans>Sterling v2</Trans> : <Trans>Sterling</Trans>}</SubText>
             </SubTextContainer>
             <ActionsContainer>
               <TraceEvent

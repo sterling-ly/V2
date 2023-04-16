@@ -8,94 +8,42 @@ export const colors = {
   gray100: '#E8ECFB',
   gray150: '#D2D9EE',
   gray200: '#B8C0DC',
-  gray250: '#A6AFCA',
   gray300: '#98A1C0',
-  gray350: '#888FAB',
   gray400: '#7780A0',
-  gray450: '#6B7594',
   gray500: '#5D6785',
-  gray550: '#505A78',
   gray600: '#404A67',
   gray650: '#333D59',
-  gray700: '#293249',
-  gray750: '#1B2236',
-  gray800: '#131A2A',
-  gray850: '#0E1524',
-  gray900: '#0D111C',
-  gray950: '#080B11',
-  pink50: '#F9ECF1',
-  pink100: '#FFD9E4',
+  gray700: '#b76165', //background interactive original: #293249
+  gray800: '#b76165', //background original: #131A2A ~ buttons and text box and containers; #b76165
+  gray900: '#844a5a', //old 0D111C container background; #844a5a
+  gray950: '#080B11', //old: 080B11_ NEW: #6e617a ??
   pink200: '#FBA4C0',
   pink300: '#FF6FA3',
   pink400: '#FB118E',
-  pink500: '#C41969',
-  pink600: '#8C0F49',
-  pink700: '#55072A',
-  pink800: '#350318',
-  pink900: '#2B000B',
-  pinkVibrant: '#F51A70',
-  red50: '#FAECEA',
-  red100: '#FED5CF',
-  red200: '#FEA79B',
   red300: '#FD766B',
   red400: '#FA2B39',
-  red500: '#C4292F',
-  red600: '#891E20',
-  red700: '#530F0F',
-  red800: '#380A03',
   red900: '#240800',
-  redVibrant: '#F14544',
-  yellow50: '#F6F2D5',
-  yellow100: '#DBBC19',
-  yellow200: '#DBBC19',
-  yellow300: '#BB9F13',
   yellow400: '#A08116',
   yellow500: '#866311',
   yellow600: '#5D4204',
-  yellow700: '#3E2B04',
-  yellow800: '#231902',
-  yellow900: '#180F02',
-  yellowVibrant: '#FAF40A',
-  // TODO: add gold 50-900
   gold200: '#EEB317',
   gold400: '#B17900',
-  goldVibrant: '#FEB239',
-  green50: '#E3F3E6',
-  green100: '#BFEECA',
   green200: '#76D191',
   green300: '#40B66B',
   green400: '#209853',
-  green500: '#0B783E',
-  green600: '#0C522A',
-  green700: '#053117',
-  green800: '#091F10',
-  green900: '#09130B',
-  greenVibrant: '#5CFE9D',
-  blue50: '#EDEFF8',
-  blue100: '#DEE1FF',
   blue200: '#ADBCFF',
   blue300: '#869EFF',
-  blue400: '#4C82FB',
-  blue500: '#1267D6',
-  blue600: '#1D4294',
-  blue700: '#09265E',
-  blue800: '#0B193F',
+  blue400: '#634f98', //original: 4C82FB; second button colors
   blue900: '#040E34',
-  blueVibrant: '#587BFF',
-  // TODO: add magenta 50-900
   magenta300: '#FD82FF',
   magentaVibrant: '#FC72FF',
   purple300: '#8440F2',
   purple900: '#1C0337',
-  // TODO: add all other vibrant variations
   networkEthereum: '#627EEA',
   networkOptimism: '#FF0420',
-  networkOptimismSoft: 'rgba(255, 4, 32, 0.16)',
   networkPolygon: '#A457FF',
   networkArbitrum: '#28A0F0',
   networkBsc: '#F0B90B',
-  networkPolygonSoft: 'rgba(164, 87, 255, 0.16)',
-  networkEthereumSoft: 'rgba(98, 126, 234, 0.16)',
 }
 
 type Theme = typeof darkTheme
@@ -105,15 +53,15 @@ const commonTheme = {
   black: colors.black,
 
   chain_1: colors.networkEthereum,
-  chain_3: colors.yellow400,
-  chain_4: colors.pink400,
+  //chain_3: colors.yellow400,
+  //chain_4: colors.pink400,
   chain_5: colors.green400,
   chain_10: colors.networkOptimism,
   chain_137: colors.networkPolygon,
   chain_42: colors.networkArbitrum,
   chain_56: colors.networkBsc,
   chain_420: colors.networkOptimism,
-  chain_42161: colors.networkArbitrum,
+  //chain_42161: colors.networkArbitrum,
   chain_421613: colors.networkArbitrum,
   chain_80001: colors.networkPolygon,
   chain_137_background: colors.purple900,
@@ -134,36 +82,36 @@ export const darkTheme = {
 
   userThemeColor: colors.magentaVibrant,
 
-  background: colors.gray800,
+  background: colors.gray800, //fixed
   backgroundBackdrop: colors.gray950,
-  backgroundSurface: colors.gray900,
-  backgroundModule: colors.gray800,
-  backgroundInteractive: colors.gray700,
+  backgroundSurface: colors.gray900, //fixed
+  backgroundModule: colors.gray800, //fixed
+  backgroundInteractive: colors.gray700, //fixed
   backgroundFloating: opacify(12, colors.black),
   backgroundOutline: opacify(24, colors.gray300),
-  backgroundScrim: opacify(72, colors.gray900),
-  backgroundScrolledSurface: opacify(72, colors.gray900),
+  backgroundScrim: opacify(72, colors.gray900), //fixed
+  backgroundScrolledSurface: opacify(72, colors.gray900), //fixed
 
-  textPrimary: colors.white,
+  textPrimary: colors.white, //
   textSecondary: colors.gray300,
   textTertiary: colors.gray500,
 
-  accentAction: colors.blue400,
-  accentActive: colors.blue400,
-  accentSuccess: colors.green200,
-  accentWarning: colors.gold200,
-  accentFailure: colors.red300,
-  accentCritical: colors.red300,
+  accentAction: colors.blue400, //fixed
+  accentActive: colors.blue400, //fixed
+  accentSuccess: colors.green200, //fixed
+  accentWarning: colors.gold200, //fixed
+  accentFailure: colors.red300, //fixed
+  accentCritical: colors.red300, //fixed
 
-  accentActionSoft: opacify(24, colors.blue400),
-  accentActiveSoft: opacify(24, colors.blue400),
-  accentSuccessSoft: opacify(24, colors.green400),
-  accentWarningSoft: opacify(24, colors.gold200),
-  accentFailureSoft: opacify(12, colors.red300),
+  accentActionSoft: opacify(24, colors.blue400), //fixed
+  accentActiveSoft: opacify(24, colors.blue400), //fixed
+  accentSuccessSoft: opacify(24, colors.green400), //fixed
+  accentWarningSoft: opacify(24, colors.gold200), //fixed
+  accentFailureSoft: opacify(12, colors.red300), //fixed
 
-  accentTextDarkPrimary: opacify(80, colors.gray900),
-  accentTextDarkSecondary: opacify(60, colors.gray900),
-  accentTextDarkTertiary: opacify(24, colors.gray900),
+  accentTextDarkPrimary: opacify(80, colors.white),
+  accentTextDarkSecondary: opacify(60, colors.gray300),
+  accentTextDarkTertiary: opacify(24, colors.gray500),
 
   accentTextLightPrimary: colors.gray50,
   accentTextLightSecondary: opacify(72, colors.gray50),
