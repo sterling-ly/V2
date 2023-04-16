@@ -34,7 +34,7 @@ const PageContainer = styled.div<{ isDarkMode: boolean }>`
 
   background: ${({ isDarkMode }) =>
     isDarkMode
-      ? 'linear-gradient(to right, #e96443, #904e95);'
+      ? 'linear-gradient(to right, #e96443, #e2ee9b);'
       : 'linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(255 255 255 /100%) 45%)'};
 `
 
@@ -49,7 +49,7 @@ const Gradient = styled.div<{ isDarkMode: boolean }>`
   min-height: 550px;
   background: ${({ isDarkMode }) =>
     isDarkMode
-      ? 'linear-gradient(rgba(8, 10, 24, 0) 0%, rgb(8 10 24 / 100%) 45%)'
+      ? 'radial-gradient(ellipse at top, rgba(225,238,195,1) 0%, rgba(240,80,83,1) 100%)'
       : 'linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(255 255 255 /100%) 45%)'};
   z-index: ${Z_INDEX.under_dropdown};
   pointer-events: none;
@@ -78,7 +78,7 @@ const Glow = styled.div`
   position: absolute;
   top: 68px;
   bottom: 0;
-  background: radial-gradient(72.04% 72.04% at 50% 3.99%, #ff37eb 0%, rgba(166, 151, 255, 0) 100%);
+  background: radial-gradient(ellipse at top, rgba(225, 238, 195, 1) 0%, rgba(240, 80, 83, 1) 100%);
   filter: blur(72px);
   border-radius: 24px;
   max-width: 480px;
@@ -217,7 +217,7 @@ const AboutContentContainer = styled.div<{ isDarkMode: boolean }>`
   width: 100%;
   background: ${({ isDarkMode }) =>
     isDarkMode
-      ? 'linear-gradient(179.82deg, rgba(0, 0, 0, 0) 0.16%, #050026 99.85%)'
+      ? 'radial-gradient(ellipse at bottom, rgba(225,238,195,1) 0%, rgba(240,80,83,1) 100%)'
       : 'linear-gradient(179.82deg, rgba(255, 255, 255, 0) 0.16%, #eaeaea 99.85%)'};
   @media screen and (min-width: ${BREAKPOINTS.md}px) {
     padding: 0 96px 5rem;
@@ -253,7 +253,7 @@ const CardGrid = styled.div<{ cols: number }>`
 `
 
 const LandingSwapContainer = styled.div`
-  height: ${({ theme }) => `calc(100vh - ${theme.mobileBottomBarHeight}px)`};
+  height: ${({ theme }) => `calc(100vh - 72px)`};
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -369,7 +369,7 @@ export default function Landing() {
                 element={InterfaceElementName.CONTINUE_BUTTON}
               >
                 <ButtonCTA as={Link} to="/swap">
-                  <ButtonCTAText>Get started</ButtonCTAText>
+                  <ButtonCTAText>Enter</ButtonCTAText>
                 </ButtonCTA>
               </TraceEvent>
             </ActionsContainer>
