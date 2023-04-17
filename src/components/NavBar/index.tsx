@@ -25,11 +25,9 @@ import * as styles from './style.css'
 
 import { ReactComponent as LockLogo } from '../../assets/svg/locklogo.svg'
 import { ReactComponent as RewardLogo } from '../../assets/svg/rewardlogo.svg'
-import { ReactComponent as VoteLogo } from '../../assets/svg/votelogo.svg'
 import { ReactComponent as SwapLogo } from '../../assets/svg/swaplogo.svg'
 import { ReactComponent as FarmLogo } from '../../assets/svg/farmlogo.svg'
 import { ReactComponent as LiquidityLogo } from '../../assets/svg/liquiditylogo.svg'
-import { ReactComponent as TokenLogo } from '../../assets/svg/tokenlogo.svg'
 
 const Nav = styled.nav`
   padding: 20px 12px;
@@ -96,43 +94,31 @@ export const PageTabs = () => {
     <>
       <MenuItem href="/swap" isActive={pathname.startsWith('/swap')}>
         <Icon>
-          <SwapLogo width="65px" height="65px" />
+          <SwapLogo width="60px" height="65px" />
         </Icon>
         <Trans>Swap</Trans>
-      </MenuItem>
-      <MenuItem href={`/tokens/${chainName.toLowerCase()}`} isActive={pathname.startsWith('/tokens')}>
-        <Icon>
-          <TokenLogo width="60px" height="60px" />
-        </Icon>
-        <Trans>Tokens</Trans>
       </MenuItem>
       <Box display={{ sm: 'flex', lg: 'none', xxl: 'flex' }} width="full">
         <MenuItem href="/pools" dataTestId="pool-nav-link" isActive={isPoolActive}>
           <Icon>
             <LiquidityLogo width="60px" height="60px" />
           </Icon>
-          <Trans>Liquidity</Trans>
+          <Trans>pools</Trans>
         </MenuItem>
       </Box>
-      <MenuItem href="" isActive={pathname.startsWith('')}>
+      <MenuItem href="farm" isActive={pathname.startsWith('')}>
         <Icon>
           <FarmLogo width="60px" height="60px" />
         </Icon>
         <Trans>Farm</Trans>
       </MenuItem>
-      <MenuItem href="/swap" isActive={pathname.startsWith('')}>
+      <MenuItem href="veMIN" isActive={pathname.startsWith('')}>
         <Icon>
           <LockLogo width="60px" height="60px" />
         </Icon>
-        <Trans>Vest</Trans>
+        <Trans>veMIN</Trans>
       </MenuItem>
-      <MenuItem href="/swap" isActive={pathname.startsWith('')}>
-        <Icon>
-          <VoteLogo width="60px" height="60px" />
-        </Icon>
-        <Trans>Vote</Trans>
-      </MenuItem>
-      <MenuItem href="/swap" isActive={pathname.startsWith('')}>
+      <MenuItem href="rewards" isActive={pathname.startsWith('')}>
         <Icon>
           <RewardLogo width="60" height="60px" />
         </Icon>
