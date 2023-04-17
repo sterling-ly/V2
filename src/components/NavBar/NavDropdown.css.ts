@@ -12,7 +12,7 @@ const baseNavDropdown = style([
     paddingTop: '8',
   }),
   {
-    boxShadow: '0px 4px 12px 0px #00000026',
+    boxShadow: '0px 4px 12px 0px #634f98',
   },
 ])
 

@@ -62,14 +62,14 @@ const baseMenuItem = style([
     paddingY: '8',
     paddingX: '14',
     marginY: '4',
-    borderRadius: '12',
+    borderRadius: '8',
     transition: '250',
     height: 'min',
     width: 'full',
     textAlign: 'center',
     display: 'flex',
     alignItems: 'center',
-    gap: '4',
+    gap: '0',
   }),
   {
     lineHeight: '24px',
@@ -83,7 +83,7 @@ const baseMenuItem = style([
 export const menuItem = style([
   baseMenuItem,
   sprinkles({
-    color: 'textSecondary',
+    color: 'textPrimary',
   }),
 ])
 
