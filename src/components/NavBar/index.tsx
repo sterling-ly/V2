@@ -26,6 +26,10 @@ import * as styles from './style.css'
 import { ReactComponent as LockLogo } from '../../assets/svg/locklogo.svg'
 import { ReactComponent as RewardLogo } from '../../assets/svg/rewardlogo.svg'
 import { ReactComponent as VoteLogo } from '../../assets/svg/votelogo.svg'
+import { ReactComponent as SwapLogo } from '../../assets/svg/swaplogo.svg'
+import { ReactComponent as FarmLogo } from '../../assets/svg/farmlogo.svg'
+import { ReactComponent as LiquidityLogo } from '../../assets/svg/liquiditylogo.svg'
+import { ReactComponent as TokenLogo } from '../../assets/svg/tokenlogo.svg'
 
 const Nav = styled.nav`
   padding: 20px 12px;
@@ -49,7 +53,7 @@ const Icon = ({ href, children }: { href?: string; children: ReactNode }) => {
         border="none"
         justifyContent="center"
         textAlign="center"
-        marginRight="12"
+        marginRight="0"
       >
         {children}
       </Box>
@@ -91,31 +95,46 @@ export const PageTabs = () => {
   return (
     <>
       <MenuItem href="/swap" isActive={pathname.startsWith('/swap')}>
+        <Icon>
+          <SwapLogo width="65px" height="65px" />
+        </Icon>
         <Trans>Swap</Trans>
       </MenuItem>
       <MenuItem href={`/tokens/${chainName.toLowerCase()}`} isActive={pathname.startsWith('/tokens')}>
+        <Icon>
+          <TokenLogo width="60px" height="60px" />
+        </Icon>
         <Trans>Tokens</Trans>
       </MenuItem>
       <Box display={{ sm: 'flex', lg: 'none', xxl: 'flex' }} width="full">
         <MenuItem href="/pools" dataTestId="pool-nav-link" isActive={isPoolActive}>
+          <Icon>
+            <LiquidityLogo width="60px" height="60px" />
+          </Icon>
           <Trans>Liquidity</Trans>
         </MenuItem>
       </Box>
+      <MenuItem href="" isActive={pathname.startsWith('')}>
+        <Icon>
+          <FarmLogo width="60px" height="60px" />
+        </Icon>
+        <Trans>Farm</Trans>
+      </MenuItem>
       <MenuItem href="/swap" isActive={pathname.startsWith('')}>
         <Icon>
-          <LockLogo width="30px" height="30px" />
+          <LockLogo width="60px" height="60px" />
         </Icon>
         <Trans>Vest</Trans>
       </MenuItem>
       <MenuItem href="/swap" isActive={pathname.startsWith('')}>
         <Icon>
-          <VoteLogo width="30px" height="30px" />
+          <VoteLogo width="60px" height="60px" />
         </Icon>
         <Trans>Vote</Trans>
       </MenuItem>
       <MenuItem href="/swap" isActive={pathname.startsWith('')}>
         <Icon>
-          <RewardLogo width="30x" height="30px" />
+          <RewardLogo width="60" height="60px" />
         </Icon>
         <Trans>Rewards</Trans>
       </MenuItem>
