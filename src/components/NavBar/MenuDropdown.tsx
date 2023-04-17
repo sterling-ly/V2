@@ -149,7 +149,7 @@ export const MenuDropdown = () => {
                       <PoolIcon width={24} height={24} fill={theme.textPrimary} />
                     </Icon>
                     <PrimaryMenuRow.Text>
-                      <Trans>Pool</Trans>
+                      <Trans>Liquidity</Trans>
                     </PrimaryMenuRow.Text>
                   </PrimaryMenuRow>
                 </Box>
@@ -162,7 +162,7 @@ export const MenuDropdown = () => {
                       <AppleLogo width="24px" height="24px" fill={theme.textPrimary} />
                     </Icon>
                     <PrimaryMenuRow.Text>
-                      <Trans>Download Uniswap Wallet</Trans>
+                      <Trans>Docs</Trans>
                     </PrimaryMenuRow.Text>
                   </PrimaryMenuRow>
                 </Box>
@@ -179,7 +179,7 @@ export const MenuDropdown = () => {
                     <BarChartIcon width={24} height={24} color={theme.textPrimary} />
                   </Icon>
                   <PrimaryMenuRow.Text>
-                    <Trans>View more analytics</Trans>
+                    <Trans>Analytics</Trans>
                   </PrimaryMenuRow.Text>
                 </PrimaryMenuRow>
               </Column>
