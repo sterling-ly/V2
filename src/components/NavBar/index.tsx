@@ -1,3 +1,4 @@
+/* eslint-disable simple-import-sort/imports */
 import { Trans } from '@lingui/macro'
 import { useWeb3React } from '@web3-react/core'
 import Web3Status from 'components/Web3Status'
@@ -22,6 +23,10 @@ import { MenuDropdown } from './MenuDropdown'
 import { SearchBar } from './SearchBar'
 import * as styles from './style.css'
 
+import { ReactComponent as LockLogo } from '../../assets/svg/locklogo.svg'
+import { ReactComponent as RewardLogo } from '../../assets/svg/rewardlogo.svg'
+import { ReactComponent as VoteLogo } from '../../assets/svg/votelogo.svg'
+
 const Nav = styled.nav`
   padding: 20px 12px;
   width: 100%;
@@ -29,6 +34,28 @@ const Nav = styled.nav`
   z-index: 2;
 `
 
+const Icon = ({ href, children }: { href?: string; children: ReactNode }) => {
+  return (
+    <>
+      <Box
+        as={href ? 'a' : 'div'}
+        href={href ?? undefined}
+        target={href ? '_blank' : undefined}
+        rel={href ? 'noopener noreferrer' : undefined}
+        display="flex"
+        flexDirection="column"
+        color="textPrimary"
+        background="none"
+        border="none"
+        justifyContent="center"
+        textAlign="center"
+        marginRight="12"
+      >
+        {children}
+      </Box>
+    </>
+  )
+}
 interface MenuItemProps {
   href: string
   id?: NavLinkProps['id']
@@ -75,12 +102,21 @@ export const PageTabs = () => {
         </MenuItem>
       </Box>
       <MenuItem href="/swap" isActive={pathname.startsWith('')}>
+        <Icon>
+          <LockLogo width="30px" height="30px" />
+        </Icon>
         <Trans>Vest</Trans>
       </MenuItem>
       <MenuItem href="/swap" isActive={pathname.startsWith('')}>
+        <Icon>
+          <VoteLogo width="30px" height="30px" />
+        </Icon>
         <Trans>Vote</Trans>
       </MenuItem>
       <MenuItem href="/swap" isActive={pathname.startsWith('')}>
+        <Icon>
+          <RewardLogo width="30x" height="30px" />
+        </Icon>
         <Trans>Rewards</Trans>
       </MenuItem>
       <Box marginY={{ sm: '4', md: 'unset' }}>
