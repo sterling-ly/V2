@@ -7,24 +7,19 @@ import { useMgtmEnabled } from 'featureFlags/flags/mgtm'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import { Box } from 'nft/components/Box'
 import { Column, Row } from 'nft/components/Flex'
-import {
-  BarChartIcon,
-  DiscordIconMenu,
-  EllipsisIcon,
-  GithubIconMenu,
-  GovernanceIcon,
-  PoolIcon,
-  TwitterIconMenu,
-} from 'nft/components/icons'
+import { DiscordIconMenu, EllipsisIcon, GithubIconMenu, PoolIcon, TwitterIconMenu } from 'nft/components/icons'
 import { body, bodySmall } from 'nft/css/common.css'
 import { themeVars } from 'nft/css/sprinkles.css'
 import { ReactNode, useReducer, useRef } from 'react'
 import { NavLink, NavLinkProps } from 'react-router-dom'
 import { useToggleModal } from 'state/application/hooks'
 import styled, { useTheme } from 'styled-components/macro'
-import { isDevelopmentEnv, isStagingEnv } from 'utils/env'
 
+import { ReactComponent as AnalyticLogo } from '../../assets/svg/analyticlogo.svg'
 import { ReactComponent as AppleLogo } from '../../assets/svg/apple_logo.svg'
+import { ReactComponent as LockLogo } from '../../assets/svg/locklogo.svg'
+import { ReactComponent as RewardLogo } from '../../assets/svg/rewardlogo.svg'
+import { ReactComponent as VoteLogo } from '../../assets/svg/votelogo.svg'
 import { ApplicationModal } from '../../state/application/reducer'
 import * as styles from './MenuDropdown.css'
 import { NavDropdown } from './NavDropdown'
@@ -156,64 +151,49 @@ export const MenuDropdown = () => {
                 <Box
                   display={mgtmEnabled ? 'flex' : 'none'}
                   onClick={() => openDownloadApp(InterfaceElementName.UNISWAP_WALLET_MODAL_DOWNLOAD_BUTTON)}
-                >
-                  <PrimaryMenuRow close={toggleOpen}>
-                    <Icon>
-                      <AppleLogo width="24px" height="24px" fill={theme.textPrimary} />
-                    </Icon>
-                    <PrimaryMenuRow.Text>
-                      <Trans>Docs</Trans>
-                    </PrimaryMenuRow.Text>
-                  </PrimaryMenuRow>
-                </Box>
-                <PrimaryMenuRow to="/vote" close={toggleOpen}>
+                ></Box>
+                <PrimaryMenuRow close={toggleOpen}>
                   <Icon>
-                    <GovernanceIcon width={24} height={24} color={theme.textPrimary} />
+                    <LockLogo width="30px" height="30px" fill={theme.textPrimary} />
                   </Icon>
                   <PrimaryMenuRow.Text>
-                    <Trans>Vote in governance</Trans>
+                    <Trans>Vest</Trans>
+                  </PrimaryMenuRow.Text>
+                </PrimaryMenuRow>
+                <PrimaryMenuRow close={toggleOpen}>
+                  <Icon>
+                    <VoteLogo width="30px" height="30px" fill={theme.textPrimary} />
+                  </Icon>
+                  <PrimaryMenuRow.Text>
+                    <Trans>Vote</Trans>
+                  </PrimaryMenuRow.Text>
+                </PrimaryMenuRow>
+                <PrimaryMenuRow to="/vote" close={toggleOpen}>
+                  <Icon>
+                    <RewardLogo width={30} height={30} color={theme.textPrimary} />
+                  </Icon>
+                  <PrimaryMenuRow.Text>
+                    <Trans>Rewards</Trans>
                   </PrimaryMenuRow.Text>
                 </PrimaryMenuRow>
                 <PrimaryMenuRow href="https://info.uniswap.org/#/">
                   <Icon>
-                    <BarChartIcon width={24} height={24} color={theme.textPrimary} />
+                    <AnalyticLogo width={30} height={30} color={theme.textPrimary} />
                   </Icon>
                   <PrimaryMenuRow.Text>
                     <Trans>Analytics</Trans>
                   </PrimaryMenuRow.Text>
                 </PrimaryMenuRow>
+                <PrimaryMenuRow close={toggleOpen}>
+                  <Icon>
+                    <AppleLogo width="24px" height="24px" fill={theme.textPrimary} />
+                  </Icon>
+                  <PrimaryMenuRow.Text>
+                    <Trans>Docs</Trans>
+                  </PrimaryMenuRow.Text>
+                </PrimaryMenuRow>
               </Column>
               <Separator />
-              <Box
-                display="flex"
-                flexDirection={{ sm: 'row', md: 'column' }}
-                flexWrap="wrap"
-                alignItems={{ sm: 'center', md: 'flex-start' }}
-                paddingX="8"
-              >
-                <SecondaryLinkedText href="https://help.uniswap.org/en/">
-                  <Trans>Help center</Trans> ↗
-                </SecondaryLinkedText>
-                <SecondaryLinkedText href="https://docs.uniswap.org/">
-                  <Trans>Documentation</Trans> ↗
-                </SecondaryLinkedText>
-                <SecondaryLinkedText href="https://uniswap.canny.io/feature-requests">
-                  <Trans>Feedback</Trans> ↗
-                </SecondaryLinkedText>
-                <SecondaryLinkedText
-                  onClick={() => {
-                    toggleOpen()
-                    togglePrivacyPolicy()
-                  }}
-                >
-                  <Trans>Legal & Privacy</Trans> ↗
-                </SecondaryLinkedText>
-                {(isDevelopmentEnv() || isStagingEnv()) && (
-                  <SecondaryLinkedText onClick={openFeatureFlagsModal}>
-                    <Trans>Feature Flags</Trans>
-                  </SecondaryLinkedText>
-                )}
-              </Box>
               <IconRow>
                 <Icon href="https://discord.com/invite/FCfyBSbCU5">
                   <DiscordIconMenu

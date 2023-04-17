@@ -200,7 +200,7 @@ export const vars = createGlobalTheme(':root', {
     gray950: '#080B11',
     accentTextLightTertiary: 'rgba(255, 255, 255, 0.12)',
     outline: 'rgba(153, 161, 189, 0.24)',
-    lightGrayOverlay: '#99A1BD14',
+    lightGrayOverlay: '#634f98', //old: #99A1BD14
     accentActiveSoft: '#4c82fb3d',
     accentActive: '#4C82FB',
   },
