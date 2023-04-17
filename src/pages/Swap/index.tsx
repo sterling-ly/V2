@@ -15,7 +15,6 @@ import { useWeb3React } from '@web3-react/core'
 import { useToggleAccountDrawer } from 'components/AccountDrawer'
 import { sendEvent } from 'components/analytics'
 import Loader from 'components/Icons/LoadingSpinner'
-import { NetworkAlert } from 'components/NetworkAlert/NetworkAlert'
 import PriceImpactWarning from 'components/swap/PriceImpactWarning'
 import SwapDetailsDropdown from 'components/swap/SwapDetailsDropdown'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
@@ -733,7 +732,6 @@ export default function Swap({ className }: { className?: string }) {
               </AutoColumn>
             </SwapWrapper>
           )}
-          <NetworkAlert />
         </PageWrapper>
         <SwitchLocaleLink />
         {!swapIsUnsupported ? null : (

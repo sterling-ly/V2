@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { t, Trans } from '@lingui/macro'
 import { InterfaceElementName } from '@uniswap/analytics-events'
 import { openDownloadApp } from 'components/AccountDrawer/DownloadButton'

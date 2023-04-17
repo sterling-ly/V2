@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable simple-import-sort/imports */
 import { Trans } from '@lingui/macro'
 import { useWeb3React } from '@web3-react/core'
