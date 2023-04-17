@@ -7,7 +7,7 @@ import { useMgtmEnabled } from 'featureFlags/flags/mgtm'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import { Box } from 'nft/components/Box'
 import { Column, Row } from 'nft/components/Flex'
-import { DiscordIconMenu, EllipsisIcon, GithubIconMenu, PoolIcon, TwitterIconMenu } from 'nft/components/icons'
+import { DiscordIconMenu, EllipsisIcon, GithubIconMenu, TwitterIconMenu } from 'nft/components/icons'
 import { body, bodySmall } from 'nft/css/common.css'
 import { themeVars } from 'nft/css/sprinkles.css'
 import { ReactNode, useReducer, useRef } from 'react'
@@ -17,9 +17,6 @@ import styled, { useTheme } from 'styled-components/macro'
 
 import { ReactComponent as AnalyticLogo } from '../../assets/svg/analyticlogo.svg'
 import { ReactComponent as AppleLogo } from '../../assets/svg/apple_logo.svg'
-import { ReactComponent as LockLogo } from '../../assets/svg/locklogo.svg'
-import { ReactComponent as RewardLogo } from '../../assets/svg/rewardlogo.svg'
-import { ReactComponent as VoteLogo } from '../../assets/svg/votelogo.svg'
 import { ApplicationModal } from '../../state/application/reducer'
 import * as styles from './MenuDropdown.css'
 import { NavDropdown } from './NavDropdown'
@@ -138,44 +135,10 @@ export const MenuDropdown = () => {
           <NavDropdown top={{ sm: 'unset', lg: '56' }} bottom={{ sm: '56', lg: 'unset' }} right="0">
             <Column gap="16">
               <Column paddingX="8" gap="4">
-                <Box display={{ sm: 'none', lg: 'flex', xxl: 'none' }}>
-                  <PrimaryMenuRow to="/pool" close={toggleOpen}>
-                    <Icon>
-                      <PoolIcon width={24} height={24} fill={theme.textPrimary} />
-                    </Icon>
-                    <PrimaryMenuRow.Text>
-                      <Trans>Liquidity</Trans>
-                    </PrimaryMenuRow.Text>
-                  </PrimaryMenuRow>
-                </Box>
                 <Box
                   display={mgtmEnabled ? 'flex' : 'none'}
                   onClick={() => openDownloadApp(InterfaceElementName.UNISWAP_WALLET_MODAL_DOWNLOAD_BUTTON)}
                 ></Box>
-                <PrimaryMenuRow close={toggleOpen}>
-                  <Icon>
-                    <LockLogo width="30px" height="30px" fill={theme.textPrimary} />
-                  </Icon>
-                  <PrimaryMenuRow.Text>
-                    <Trans>Vest</Trans>
-                  </PrimaryMenuRow.Text>
-                </PrimaryMenuRow>
-                <PrimaryMenuRow close={toggleOpen}>
-                  <Icon>
-                    <VoteLogo width="30px" height="30px" fill={theme.textPrimary} />
-                  </Icon>
-                  <PrimaryMenuRow.Text>
-                    <Trans>Vote</Trans>
-                  </PrimaryMenuRow.Text>
-                </PrimaryMenuRow>
-                <PrimaryMenuRow to="/vote" close={toggleOpen}>
-                  <Icon>
-                    <RewardLogo width={30} height={30} color={theme.textPrimary} />
-                  </Icon>
-                  <PrimaryMenuRow.Text>
-                    <Trans>Rewards</Trans>
-                  </PrimaryMenuRow.Text>
-                </PrimaryMenuRow>
                 <PrimaryMenuRow href="https://info.uniswap.org/#/">
                   <Icon>
                     <AnalyticLogo width={30} height={30} color={theme.textPrimary} />
@@ -195,7 +158,7 @@ export const MenuDropdown = () => {
               </Column>
               <Separator />
               <IconRow>
-                <Icon href="https://discord.com/invite/FCfyBSbCU5">
+                <Icon href="https://discord.gg/Mr92PZ63xZ">
                   <DiscordIconMenu
                     className={styles.hover}
                     width={24}
@@ -203,7 +166,7 @@ export const MenuDropdown = () => {
                     color={themeVars.colors.textSecondary}
                   />
                 </Icon>
-                <Icon href="https://twitter.com/Uniswap">
+                <Icon href="https://twitter.com/Sterling_Fi">
                   <TwitterIconMenu
                     className={styles.hover}
                     width={24}
@@ -211,7 +174,7 @@ export const MenuDropdown = () => {
                     color={themeVars.colors.textSecondary}
                   />
                 </Icon>
-                <Icon href="https://github.com/Uniswap">
+                <Icon href="https://github.com/Sterl-o">
                   <GithubIconMenu
                     className={styles.hover}
                     width={24}
