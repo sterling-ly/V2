@@ -1,3 +1,4 @@
+/* eslint-disable simple-import-sort/imports */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Trans } from '@lingui/macro'
 import { Trace, TraceEvent } from '@uniswap/analytics'
@@ -8,19 +9,18 @@ import { MAIN_CARDS, MORE_CARDS } from 'components/About/constants'
 import { BaseButton } from 'components/Button'
 import { useSwapWidgetEnabled } from 'featureFlags/flags/swapWidget'
 import { useAtomValue } from 'jotai/utils'
-import Swap from 'pages/Swap'
 import { parse } from 'qs'
 import { useEffect, useRef, useState } from 'react'
 import { ArrowDownCircle } from 'react-feather'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Link as NativeLink } from 'react-router-dom'
+//import Partners from './Partners'
 import { shouldDisableNFTRoutesAtom } from 'state/application/atoms'
 import { useAppSelector } from 'state/hooks'
 import styled, { css } from 'styled-components/macro'
 import { BREAKPOINTS } from 'theme'
 import { useIsDarkMode } from 'theme/components/ThemeToggle'
 import { Z_INDEX } from 'theme/zIndex'
-
 const PageContainer = styled.div<{ isDarkMode: boolean }>`
   position: absolute;
   top: 0;
@@ -252,15 +252,6 @@ const CardGrid = styled.div<{ cols: number }>`
   }
 `
 
-const LandingSwapContainer = styled.div`
-  height: ${({ theme }) => `calc(100vh - 72px)`};
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1;
-`
-
 const SwapCss = css`
   * {
     pointer-events: none;
@@ -276,13 +267,6 @@ const LinkCss = css`
   text-decoration: none;
   max-width: 480px;
   width: 100%;
-`
-
-const LandingSwap = styled(Swap)`
-  ${SwapCss}
-  &:hover {
-    border: 1px solid ${({ theme }) => theme.accentAction};
-  }
 `
 
 const Link = styled(NativeLink)`
@@ -324,23 +308,6 @@ export default function Landing() {
     <Trace page={InterfacePageName.LANDING_PAGE} shouldLogImpression>
       {showContent && (
         <PageContainer isDarkMode={isDarkMode} data-testid="landing-page">
-          <LandingSwapContainer>
-            <TraceEvent
-              events={[BrowserEvent.onClick]}
-              name={SharedEventName.ELEMENT_CLICKED}
-              element={InterfaceElementName.LANDING_PAGE_SWAP_ELEMENT}
-            >
-              {swapWidgetEnabled ? (
-                <WidgetLandingLink to="/swap">
-                  <Swap />
-                </WidgetLandingLink>
-              ) : (
-                <Link to="/swap">
-                  <LandingSwap />
-                </Link>
-              )}
-            </TraceEvent>
-          </LandingSwapContainer>
           <Gradient isDarkMode={isDarkMode} />
           <GlowContainer>
             <Glow />
