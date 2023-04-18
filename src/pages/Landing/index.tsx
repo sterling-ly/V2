@@ -5,7 +5,6 @@ import { BrowserEvent, InterfaceElementName, InterfacePageName, SharedEventName 
 import { AboutFooter } from 'components/About/AboutFooter'
 import Card, { CardType } from 'components/About/Card'
 import { MAIN_CARDS, MORE_CARDS } from 'components/About/constants'
-import ProtocolBanner from 'components/About/ProtocolBanner'
 import { BaseButton } from 'components/Button'
 import { useSwapWidgetEnabled } from 'featureFlags/flags/swapWidget'
 import { useAtomValue } from 'jotai/utils'
@@ -388,7 +387,6 @@ export default function Landing() {
                 <Card {...card} icon={isDarkMode ? darkIcon : lightIcon} key={card.title} type={CardType.Secondary} />
               ))}
             </CardGrid>
-            <ProtocolBanner />
             <AboutFooter />
           </AboutContentContainer>
         </PageContainer>

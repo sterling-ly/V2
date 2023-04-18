@@ -672,14 +672,7 @@ export default function Swap({ className }: { className?: string }) {
                       ) : (
                         <>
                           <div style={{ height: 20 }}>
-                            <MouseoverTooltip
-                              text={
-                                <Trans>
-                                  Permission is required for Uniswap to swap each token. This will expire after one
-                                  month for your security.
-                                </Trans>
-                              }
-                            >
+                            <MouseoverTooltip text={<Trans>Permission is required to swap tokens.</Trans>}>
                               <Info size={20} />
                             </MouseoverTooltip>
                           </div>
