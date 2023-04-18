@@ -1,26 +1,22 @@
-/* eslint-disable simple-import-sort/imports */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Trans } from '@lingui/macro'
 import { Trace, TraceEvent } from '@uniswap/analytics'
 import { BrowserEvent, InterfaceElementName, InterfacePageName, SharedEventName } from '@uniswap/analytics-events'
-import { AboutFooter } from 'components/About/AboutFooter'
-import Card, { CardType } from 'components/About/Card'
-import { MAIN_CARDS, MORE_CARDS } from 'components/About/constants'
 import { BaseButton } from 'components/Button'
 import { useSwapWidgetEnabled } from 'featureFlags/flags/swapWidget'
 import { useAtomValue } from 'jotai/utils'
+import Swap from 'pages/Swap'
 import { parse } from 'qs'
 import { useEffect, useRef, useState } from 'react'
-import { ArrowDownCircle } from 'react-feather'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Link as NativeLink } from 'react-router-dom'
-//import Partners from './Partners'
 import { shouldDisableNFTRoutesAtom } from 'state/application/atoms'
 import { useAppSelector } from 'state/hooks'
 import styled, { css } from 'styled-components/macro'
 import { BREAKPOINTS } from 'theme'
 import { useIsDarkMode } from 'theme/components/ThemeToggle'
 import { Z_INDEX } from 'theme/zIndex'
+
 const PageContainer = styled.div<{ isDarkMode: boolean }>`
   position: absolute;
   top: 0;
@@ -183,32 +179,6 @@ const ActionsContainer = styled.span`
   pointer-events: auto;
 `
 
-const LearnMoreContainer = styled.div`
-  align-items: center;
-  color: ${({ theme }) => theme.textTertiary};
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 36px 0 0;
-  display: flex;
-  visibility: hidden;
-  pointer-events: auto;
-  @media screen and (min-width: ${BREAKPOINTS.sm}px) {
-    visibility: visible;
-  }
-
-  transition: ${({ theme }) => `${theme.transition.duration.medium} ${theme.transition.timing.ease} opacity`};
-
-  &:hover {
-    opacity: 0.6;
-  }
-`
-
-const LearnMoreArrow = styled(ArrowDownCircle)`
-  margin-left: 14px;
-  size: 20px;
-`
-
 const AboutContentContainer = styled.div<{ isDarkMode: boolean }>`
   display: flex;
   flex-direction: column;
@@ -252,6 +222,15 @@ const CardGrid = styled.div<{ cols: number }>`
   }
 `
 
+const LandingSwapContainer = styled.div`
+  height: ${({ theme }) => `calc(100vh - 72px)`};
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+`
+
 const SwapCss = css`
   * {
     pointer-events: none;
@@ -267,6 +246,13 @@ const LinkCss = css`
   text-decoration: none;
   max-width: 480px;
   width: 100%;
+`
+
+const LandingSwap = styled(Swap)`
+  ${SwapCss}
+  &:hover {
+    border: 1px solid ${({ theme }) => theme.accentAction};
+  }
 `
 
 const Link = styled(NativeLink)`
@@ -308,6 +294,7 @@ export default function Landing() {
     <Trace page={InterfacePageName.LANDING_PAGE} shouldLogImpression>
       {showContent && (
         <PageContainer isDarkMode={isDarkMode} data-testid="landing-page">
+          <LandingSwapContainer></LandingSwapContainer>
           <Gradient isDarkMode={isDarkMode} />
           <GlowContainer>
             <Glow />
@@ -330,32 +317,7 @@ export default function Landing() {
                 </ButtonCTA>
               </TraceEvent>
             </ActionsContainer>
-            <LearnMoreContainer
-              onClick={() => {
-                cardsRef?.current?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              <Trans>Learn more</Trans>
-              <LearnMoreArrow />
-            </LearnMoreContainer>
           </ContentContainer>
-          <AboutContentContainer isDarkMode={isDarkMode}>
-            <CardGrid cols={2} ref={cardsRef}>
-              {MAIN_CARDS.map(({ darkBackgroundImgSrc, lightBackgroundImgSrc, ...card }) => (
-                <Card
-                  {...card}
-                  backgroundImgSrc={isDarkMode ? darkBackgroundImgSrc : lightBackgroundImgSrc}
-                  key={card.title}
-                />
-              ))}
-            </CardGrid>
-            <CardGrid cols={3}>
-              {MORE_CARDS.map(({ darkIcon, lightIcon, ...card }) => (
-                <Card {...card} icon={isDarkMode ? darkIcon : lightIcon} key={card.title} type={CardType.Secondary} />
-              ))}
-            </CardGrid>
-            <AboutFooter />
-          </AboutContentContainer>
         </PageContainer>
       )}
     </Trace>

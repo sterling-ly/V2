@@ -3190,6 +3190,11 @@
   dependencies:
     cross-fetch "^3.1.5"
 
+"@sefailyasoz/react-carousel@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@sefailyasoz/react-carousel/-/react-carousel-1.1.1.tgz#f6ec32effce7a2428702f44d48bdec4dd73f61f9"
+  integrity sha512-cpwubrSfXReAPZjTBYDa1G2kDBql5HpksPq3hN+VnPAdlhIk+WDKdrPKktAhRQ4fsFKJIsqBgm+/nbKI+tLotw==
+
 "@sentry-internal/tracing@7.45.0":
   version "7.45.0"
   resolved "https://registry.yarnpkg.com/@sentry-internal/tracing/-/tracing-7.45.0.tgz#01f347d0d1b42451b340b32b12923dc22e042d27"
