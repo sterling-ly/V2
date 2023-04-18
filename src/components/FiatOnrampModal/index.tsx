@@ -15,7 +15,7 @@ const Wrapper = styled.div<{ isDarkMode: boolean }>`
   // #1c1c1e is the background color for the darkmode moonpay iframe as of 2/16/2023
   background-color: ${({ isDarkMode, theme }) => (isDarkMode ? MOONPAY_DARK_BACKGROUND : theme.white)};
   border-radius: 20px;
-  box-shadow: ${({ theme }) => theme.deepShadow};
+  box-shadow: 0px 0px 16px 0px #634f98;
   display: flex;
   flex-flow: column nowrap;
   margin: 0;

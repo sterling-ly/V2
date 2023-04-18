@@ -9,7 +9,7 @@ import { Copy } from 'react-feather'
 import styled from 'styled-components/macro'
 import { isSentryEnabled } from 'utils/env'
 
-import { CopyToClipboard, ExternalLink, ThemedText } from '../../theme'
+import { CopyToClipboard, ThemedText } from '../../theme'
 import { Column } from '../Column'
 
 const FallbackWrapper = styled.div`
@@ -180,11 +180,6 @@ const Fallback = ({ error, eventId }: { error: Error; eventId: string | null }) 
             <SmallButtonPrimary onClick={() => window.location.reload()}>
               <Trans>Reload the app</Trans>
             </SmallButtonPrimary>
-            <ExternalLink id="get-support-on-discord" href="https://discord.gg/FCfyBSbCU5" target="_blank">
-              <SmallButtonLight>
-                <Trans>Get support</Trans>
-              </SmallButtonLight>
-            </ExternalLink>
           </StretchedRow>
         </Column>
       </BodyWrapper>

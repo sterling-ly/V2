@@ -509,5 +509,5 @@ export const Separator = styled.div`
 
 export const GlowEffect = styled.div`
   border-radius: 32px;
-  box-shadow: ${({ theme }) => theme.networkDefaultShadow};
+  box-shadow: 0px 0px 16px 0px #634f98;
 `

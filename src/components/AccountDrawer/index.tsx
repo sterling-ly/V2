@@ -109,7 +109,7 @@ const AccountDrawerWrapper = styled.div<{ open: boolean }>`
     width: 100%;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-    box-shadow: unset;
+    box-shadow: 0px 0px 16px 0px #634f98;
     transition: top ${({ theme }) => theme.transition.duration.medium};
   }
 
@@ -124,7 +124,7 @@ const AccountDrawerWrapper = styled.div<{ open: boolean }>`
   background-color: ${({ theme }) => theme.backgroundSurface};
   border: ${({ theme }) => `1px solid ${theme.backgroundOutline}`};
 
-  box-shadow: ${({ theme }) => theme.deepShadow};
+  box-shadow: 0px 0px 16px 0px #634f98;
   transition: margin-right ${({ theme }) => theme.transition.duration.medium};
 `
 

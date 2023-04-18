@@ -26,7 +26,7 @@ export const LogoImage = styled.img<{ size: string; useBG?: boolean }>`
     useBG &&
     css`
       background: radial-gradient(white 60%, #ffffff00 calc(70% + 1px));
-      box-shadow: 0 0 1px white;
+      box-shadow: 0px 0px 16px 0px #634f98;
     `}
 `
 

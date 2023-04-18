@@ -30,7 +30,7 @@ const pulse = (color: string) => keyframes`
   }
 
   100% {
-    box-shadow: 0 0 0 0 ${color};
+    box-shadow: 0px 0px 16px 0px #634f98;
   }
 `
 const FocusedOutlineCard = styled(Card)<{ pulsing: boolean }>`

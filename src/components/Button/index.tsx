@@ -72,14 +72,14 @@ export const ButtonPrimary = styled(BaseButton)`
   padding: 16px;
   color: ${({ theme }) => theme.accentTextLightPrimary};
   &:focus {
-    box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.05, theme.accentAction)};
+    box-shadow: 0px 0px 16px 0px #634f98;
     background-color: ${({ theme }) => darken(0.05, theme.accentAction)};
   }
   &:hover {
     background-color: ${({ theme }) => darken(0.05, theme.accentAction)};
   }
   &:active {
-    box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.1, theme.accentAction)};
+    box-shadow: 0px 0px 16px 0px #634f98;
     background-color: ${({ theme }) => darken(0.1, theme.accentAction)};
   }
   &:disabled {
@@ -88,7 +88,7 @@ export const ButtonPrimary = styled(BaseButton)`
     color: ${({ altDisabledStyle, disabled, theme }) =>
       altDisabledStyle ? (disabled ? theme.white : theme.textSecondary) : theme.textSecondary};
     cursor: auto;
-    box-shadow: none;
+    box-shadow: 0px 0px 16px 0px #634f98;
     border: 1px solid transparent;
     outline: none;
   }
@@ -109,14 +109,14 @@ const BaseButtonLight = styled(BaseButton)`
   font-weight: 600;
 
   &:focus {
-    box-shadow: 0 0 0 1pt ${({ theme, disabled }) => !disabled && theme.accentActionSoft};
+    box-shadow: 0px 0px 16px 0px #634f98;
     background-color: ${({ theme, disabled }) => !disabled && theme.accentActionSoft};
   }
   &:hover {
     background-color: ${({ theme, disabled }) => !disabled && theme.accentActionSoft};
   }
   &:active {
-    box-shadow: 0 0 0 1pt ${({ theme, disabled }) => !disabled && theme.accentActionSoft};
+    box-shadow: 0px 0px 16px 0px #634f98;
     background-color: ${({ theme, disabled }) => !disabled && theme.accentActionSoft};
   }
 
@@ -167,14 +167,14 @@ export const ButtonSecondary = styled(BaseButton)`
   padding: ${({ padding }) => (padding ? padding : '10px')};
 
   &:focus {
-    box-shadow: 0 0 0 1pt ${({ theme }) => theme.deprecated_primary4};
+    box-shadow: 0px 0px 16px 0px #634f98;
     border: 1px solid ${({ theme }) => theme.deprecated_primary3};
   }
   &:hover {
     border: 1px solid ${({ theme }) => theme.deprecated_primary3};
   }
   &:active {
-    box-shadow: 0 0 0 1pt ${({ theme }) => theme.deprecated_primary4};
+    box-shadow: 0px 0px 16px 0px #634f98;
     border: 1px solid ${({ theme }) => theme.deprecated_primary3};
   }
   &:disabled {
@@ -191,13 +191,13 @@ export const ButtonOutlined = styled(BaseButton)`
   background-color: transparent;
   color: ${({ theme }) => theme.textPrimary};
   &:focus {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.deprecated_bg4};
+    box-shadow: 0px 0px 16px 0px #634f98;
   }
   &:hover {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.textTertiary};
+    box-shadow: 0px 0px 16px 0px #634f98;
   }
   &:active {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.deprecated_bg4};
+    box-shadow: 0px 0px 16px 0px #634f98;
   }
   &:disabled {
     opacity: 50%;

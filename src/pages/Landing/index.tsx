@@ -7,7 +7,7 @@ import { useSwapWidgetEnabled } from 'featureFlags/flags/swapWidget'
 import { useAtomValue } from 'jotai/utils'
 import Swap from 'pages/Swap'
 import { parse } from 'qs'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Link as NativeLink } from 'react-router-dom'
 import { shouldDisableNFTRoutesAtom } from 'state/application/atoms'
@@ -179,49 +179,6 @@ const ActionsContainer = styled.span`
   pointer-events: auto;
 `
 
-const AboutContentContainer = styled.div<{ isDarkMode: boolean }>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 24px 5rem;
-  width: 100%;
-  background: ${({ isDarkMode }) =>
-    isDarkMode
-      ? 'radial-gradient(ellipse at bottom, rgba(225,238,195,1) 0%, rgba(240,80,83,1) 100%)'
-      : 'linear-gradient(179.82deg, rgba(255, 255, 255, 0) 0.16%, #eaeaea 99.85%)'};
-  @media screen and (min-width: ${BREAKPOINTS.md}px) {
-    padding: 0 96px 5rem;
-  }
-`
-
-const CardGrid = styled.div<{ cols: number }>`
-  display: grid;
-  gap: 12px;
-  width: 100%;
-  padding: 24px 0 0;
-  max-width: 1440px;
-  scroll-margin: ${({ theme }) => `${theme.navHeight}px 0 0`};
-
-  grid-template-columns: 1fr;
-  @media screen and (min-width: ${BREAKPOINTS.sm}px) {
-    // At this screen size, we show up to 2 columns.
-    grid-template-columns: ${({ cols }) =>
-      Array.from(Array(cols === 2 ? 2 : 1))
-        .map(() => '1fr')
-        .join(' ')};
-    gap: 32px;
-  }
-
-  @media screen and (min-width: ${BREAKPOINTS.lg}px) {
-    // at this screen size, always show the max number of columns
-    grid-template-columns: ${({ cols }) =>
-      Array.from(Array(cols))
-        .map(() => '1fr')
-        .join(' ')};
-    gap: 32px;
-  }
-`
-
 const LandingSwapContainer = styled.div`
   height: ${({ theme }) => `calc(100vh - 72px)`};
   width: 100%;
@@ -266,8 +223,6 @@ const WidgetLandingLink = styled(NativeLink)`
 
 export default function Landing() {
   const isDarkMode = useIsDarkMode()
-
-  const cardsRef = useRef<HTMLDivElement>(null)
 
   const [showContent, setShowContent] = useState(false)
   const selectedWallet = useAppSelector((state) => state.user.selectedWallet)

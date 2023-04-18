@@ -51,7 +51,7 @@ const PopupContainer = styled.div<{ show: boolean }>`
 
   border: 1px solid ${({ theme }) => theme.backgroundOutline};
 
-  box-shadow: ${({ theme }) => theme.deepShadow};
+  box-shadow: 0px 0px 16px 0px #634f98;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
     bottom: 62px;
