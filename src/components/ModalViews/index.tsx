@@ -32,7 +32,7 @@ export function LoadingView({ children, onDismiss }: { children: any; onDismiss:
       <AutoColumn gap="100px" justify="center">
         {children}
         <ThemedText.DeprecatedSubHeader>
-          <Trans>Confirm this transaction in your wallet</Trans>
+          <Trans>Confirm</Trans>
         </ThemedText.DeprecatedSubHeader>
       </AutoColumn>
     </ConfirmOrLoadingWrapper>
