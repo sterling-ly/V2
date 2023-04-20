@@ -244,25 +244,15 @@ export default function AuthenticatedHeader({ account, openSettings }: { account
         )}
         {!shouldDisableNFTRoutes && (
           <HeaderButton
-            data-testid="nft-view-self-nfts"
+            data-testid="veMVA" //redirect to lock page
             onClick={navigateToProfile}
             size={ButtonSize.medium}
             emphasis={ButtonEmphasis.medium}
           >
-            <Trans>View and sell NFTs</Trans>
+            <Trans>Lock veMVA</Trans>
           </HeaderButton>
         )}
         <MiniPortfolio account={account} />
-        {isUnclaimed && (
-          <UNIButton onClick={openClaimModal} size={ButtonSize.medium} emphasis={ButtonEmphasis.medium}>
-            <Trans>Claim</Trans> {unclaimedAmount?.toFixed(0, { groupSeparator: ',' } ?? '-')} <Trans>reward</Trans>
-          </UNIButton>
-        )}
-        {isClaimAvailable && (
-          <UNIButton size={ButtonSize.medium} emphasis={ButtonEmphasis.medium} onClick={openNftModal}>
-            <Trans>Claim NFT Airdrop</Trans>
-          </UNIButton>
-        )}
       </PortfolioDrawerContainer>
     </AuthenticatedHeaderWrapper>
   )

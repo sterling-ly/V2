@@ -1,4 +1,3 @@
-import { Trans } from '@lingui/macro'
 import { Percent } from '@uniswap/sdk-core'
 import { subhead } from 'nft/css/common.css'
 import styled from 'styled-components/macro'
@@ -28,9 +27,7 @@ export default function SwapHeader({ allowedSlippage }: { allowedSlippage: Perce
     <StyledSwapHeader>
       <RowBetween>
         <RowFixed style={{ gap: '8px' }}>
-          <TextHeader className={subhead}>
-            <Trans>Swap</Trans>
-          </TextHeader>
+          <TextHeader className={subhead}></TextHeader>
         </RowFixed>
         <RowFixed>
           <SettingsTab placeholderSlippage={allowedSlippage} />

@@ -153,13 +153,7 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
             <Break />
             <AutoColumn gap="lg" style={{ padding: '0 2rem' }}>
               <Text fontWeight={500} fontSize={20}>
-                <Trans>
-                  Expert mode turns off the confirm transaction prompt and allows high slippage trades that often result
-                  in bad rates and lost funds.
-                </Trans>
-              </Text>
-              <Text fontWeight={600} fontSize={20}>
-                <Trans>ONLY USE THIS MODE IF YOU KNOW WHAT YOU ARE DOING.</Trans>
+                <Trans> Ape mode turns off the confirm transaction prompt and allows high slippage trades.</Trans>
               </Text>
               <ButtonError
                 error={true}
@@ -173,7 +167,7 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
                 }}
               >
                 <Text fontSize={20} fontWeight={500} id="confirm-expert-mode">
-                  <Trans>Turn On Expert Mode</Trans>
+                  <Trans>Ape Mode</Trans>
                 </Text>
               </ButtonError>
             </AutoColumn>
@@ -190,7 +184,7 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
         {expertMode ? (
           <EmojiWrapper>
             <span role="img" aria-label="wizard-icon">
-              🧙
+              🦧
             </span>
           </EmojiWrapper>
         ) : null}
@@ -209,9 +203,8 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
               <RowBetween>
                 <RowFixed>
                   <ThemedText.DeprecatedBlack fontWeight={400} fontSize={14} color={theme.textSecondary}>
-                    <Trans>Auto Router API</Trans>
+                    <Trans>Auto Routing</Trans>
                   </ThemedText.DeprecatedBlack>
-                  <QuestionHelper text={<Trans>Use the Uniswap Labs API to get faster quotes.</Trans>} />
                 </RowFixed>
                 <Toggle
                   id="toggle-optimized-router-button"
@@ -229,11 +222,13 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
             <RowBetween>
               <RowFixed>
                 <ThemedText.DeprecatedBlack fontWeight={400} fontSize={14} color={theme.textSecondary}>
-                  <Trans>Expert Mode</Trans>
+                  <Trans>Ape Mode</Trans>
                 </ThemedText.DeprecatedBlack>
                 <QuestionHelper
                   text={
-                    <Trans>Allow high price impact trades and skip the confirm screen. Use at your own risk.</Trans>
+                    <Trans>
+                      Ape mode allows high price impact trades and skips the confirm screen. Ape responsibly.
+                    </Trans>
                   }
                 />
               </RowFixed>

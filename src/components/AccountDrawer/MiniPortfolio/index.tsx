@@ -11,7 +11,6 @@ import { shouldDisableNFTRoutesAtom } from 'state/application/atoms'
 import styled from 'styled-components/macro'
 import { ThemedText } from 'theme'
 
-import { ActivityTab } from './Activity'
 import NFTs from './NFTs'
 import Pools from './Pools'
 import { PortfolioRowWrapper } from './PortfolioRow'
@@ -36,7 +35,7 @@ const Nav = styled(AutoRow)`
 `
 
 const NavItem = styled(ThemedText.SubHeader)<{ active?: boolean }>`
-  color: ${({ theme, active }) => (active ? theme.textPrimary : theme.textTertiary)};
+  color: ${({ theme, active }) => (active ? theme.textPrimary : theme.textPrimary)};
   transition: ${({ theme }) => `${theme.transition.duration.medium} ${theme.transition.timing.ease} color`};
 
   &:hover {
@@ -68,22 +67,16 @@ const Pages: Array<Page> = [
     loggingElementName: InterfaceElementName.MINI_PORTFOLIO_TOKENS_TAB,
   },
   {
-    title: <Trans>NFTs</Trans>,
+    title: <Trans>veNFTs</Trans>,
     key: 'nfts',
     component: NFTs,
     loggingElementName: InterfaceElementName.MINI_PORTFOLIO_NFT_TAB,
   },
   {
-    title: <Trans>Pools</Trans>,
+    title: 'Liquidity',
     key: 'pools',
     component: Pools,
     loggingElementName: InterfaceElementName.MINI_PORTFOLIO_POOLS_TAB,
-  },
-  {
-    title: <Trans>Activity</Trans>,
-    key: 'activity',
-    component: ActivityTab,
-    loggingElementName: InterfaceElementName.MINI_PORTFOLIO_ACTIVITY_TAB,
   },
 ]
 

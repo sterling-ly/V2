@@ -96,14 +96,14 @@ export const PageTabs = () => {
         <Icon>
           <SwapLogo width="60px" height="65px" />
         </Icon>
-        <Trans>Swap</Trans>
+        <Trans>Trade</Trans>
       </MenuItem>
       <Box display={{ sm: 'flex', lg: 'none', xxl: 'flex' }} width="full">
         <MenuItem href="/pools" dataTestId="pool-nav-link" isActive={isPoolActive}>
           <Icon>
             <LiquidityLogo width="60px" height="60px" />
           </Icon>
-          <Trans>pools</Trans>
+          <Trans>Liquidity</Trans>
         </MenuItem>
       </Box>
       <MenuItem href="farm" isActive={pathname.startsWith('')}>
@@ -112,11 +112,11 @@ export const PageTabs = () => {
         </Icon>
         <Trans>Farm</Trans>
       </MenuItem>
-      <MenuItem href="veMIN" isActive={pathname.startsWith('')}>
+      <MenuItem href="veMVA" isActive={pathname.startsWith('')}>
         <Icon>
           <LockLogo width="60px" height="60px" />
         </Icon>
-        <Trans>veMIN</Trans>
+        <Trans>veMVA</Trans>
       </MenuItem>
       <MenuItem href="rewards" isActive={pathname.startsWith('')}>
         <Icon>

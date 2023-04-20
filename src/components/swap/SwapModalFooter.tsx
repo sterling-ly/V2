@@ -153,7 +153,7 @@ export default function SwapModalFooter({
             id={InterfaceElementName.CONFIRM_SWAP_BUTTON}
           >
             <Text fontSize={20} fontWeight={500}>
-              <Trans>Confirm Swap</Trans>
+              <Trans>Confirm</Trans>
             </Text>
           </ButtonError>
         </TraceEvent>
