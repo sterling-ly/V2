@@ -16,7 +16,7 @@ import { useProfilePageState, useSellAsset, useWalletCollections } from 'nft/hoo
 import { useIsNftClaimAvailable } from 'nft/hooks/useIsNftClaimAvailable'
 import { ProfilePageStateType } from 'nft/types'
 import { useCallback } from 'react'
-import { ArrowDownRight, ArrowUpRight, Copy, IconProps, Info, Power, Settings } from 'react-feather'
+import { ArrowDownRight, ArrowUpRight, Copy, IconProps, Info, Power } from 'react-feather'
 import { useNavigate } from 'react-router-dom'
 import { shouldDisableNFTRoutesAtom } from 'state/application/atoms'
 import { useAppDispatch } from 'state/hooks'
@@ -208,7 +208,6 @@ export default function AuthenticatedHeader({ account, openSettings }: { account
           )}
         </StatusWrapper>
         <IconContainer>
-          <IconButton data-testid="wallet-settings" onClick={openSettings} Icon={Settings} />
           <TraceEvent
             events={[BrowserEvent.onClick]}
             name={SharedEventName.ELEMENT_CLICKED}

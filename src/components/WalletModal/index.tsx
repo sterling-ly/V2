@@ -3,7 +3,6 @@ import { CustomUserProperties, InterfaceEventName, WalletConnectionResult } from
 import { getWalletMeta } from '@uniswap/conedison/provider/meta'
 import { useWeb3React } from '@web3-react/core'
 import { useAccountDrawer } from 'components/AccountDrawer'
-import IconButton from 'components/AccountDrawer/IconButton'
 import { sendEvent } from 'components/analytics'
 import { AutoColumn } from 'components/Column'
 import { AutoRow } from 'components/Row'
@@ -13,7 +12,6 @@ import { ErrorCode } from 'connection/utils'
 import { isSupportedChain } from 'constants/chains'
 //import { useMgtmEnabled } from 'featureFlags/flags/mgtm'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Settings } from 'react-feather'
 import { useAppDispatch } from 'state/hooks'
 import { updateSelectedWallet } from 'state/user/reducer'
 import { useConnectedWallets } from 'state/wallets/hooks'
@@ -182,8 +180,7 @@ export default function WalletModal({ openSettings }: { openSettings: () => void
   return (
     <Wrapper data-testid="wallet-modal">
       <AutoRow justify="space-between" width="100%" marginBottom="16px">
-        <ThemedText.SubHeader fontWeight={500}>Connect a wallet</ThemedText.SubHeader>
-        <IconButton Icon={Settings} onClick={openSettings} data-testid="wallet-settings" />
+        <ThemedText.SubHeader fontWeight={500}>Connect your wallet</ThemedText.SubHeader>
       </AutoRow>
       {pendingError ? (
         pendingConnection && (
