@@ -70,8 +70,8 @@ export function AdvancedSwapDetails({
             <MouseoverTooltip
               text={
                 <Trans>
-                  The amount you expect to receive at the current market price. You may receive less or more if the
-                  market price changes while your transaction is pending.
+                  The amount you expect to receive. You may receive less or more if the market price changes while your
+                  transaction is pending.
                 </Trans>
               }
               disableHover={hideInfoTooltips}
