@@ -11,7 +11,7 @@ import { Connection, ConnectionType, getConnections, networkConnection } from 'c
 import { useGetConnection } from 'connection'
 import { ErrorCode } from 'connection/utils'
 import { isSupportedChain } from 'constants/chains'
-import { useMgtmEnabled } from 'featureFlags/flags/mgtm'
+//import { useMgtmEnabled } from 'featureFlags/flags/mgtm'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Settings } from 'react-feather'
 import { useAppDispatch } from 'state/hooks'
@@ -177,7 +177,7 @@ export default function WalletModal({ openSettings }: { openSettings: () => void
     [dispatch, setPendingError, toggleWalletDrawer]
   )
 
-  const mgtmEnabled = useMgtmEnabled()
+  //const mgtmEnabled = useMgtmEnabled()
 
   return (
     <Wrapper data-testid="wallet-modal">
@@ -194,7 +194,7 @@ export default function WalletModal({ openSettings }: { openSettings: () => void
           <OptionGrid data-testid="option-grid">
             {connections.map((connection) =>
               // Hides Uniswap Wallet if mgtm is disabled
-              connection.shouldDisplay() && !(connection.type === ConnectionType.UNIWALLET && !mgtmEnabled) ? (
+              connection.shouldDisplay() && !(connection.type === ConnectionType.UNIWALLET) ? (
                 <Option
                   key={connection.getName()}
                   connection={connection}
