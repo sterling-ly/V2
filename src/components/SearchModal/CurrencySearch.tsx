@@ -227,8 +227,8 @@ export function CurrencySearch({
             <SearchInput
               type="text"
               id="token-search-input"
-              placeholder={t`Search name or paste address`}
-              autoComplete="off"
+              placeholder={t`Search`}
+              autoComplete="on"
               value={searchQuery}
               ref={inputRef as RefObject<HTMLInputElement>}
               onChange={handleInput}
@@ -285,7 +285,7 @@ export function CurrencySearch({
           </div>
         ) : (
           <Column style={{ padding: '20px', height: '100%' }}>
-            <ThemedText.DeprecatedMain color={theme.textTertiary} textAlign="center" mb="20px">
+            <ThemedText.DeprecatedMain color={theme.textPrimary} textAlign="center" mb="20px">
               <Trans>No results found.</Trans>
             </ThemedText.DeprecatedMain>
           </Column>

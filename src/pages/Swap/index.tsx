@@ -83,10 +83,10 @@ const SwapSection = styled.div`
   position: relative;
   background-color: ${({ theme }) => theme.backgroundModule};
   border-radius: 12px;
-  padding: 16px;
+  padding: 33px;
   color: ${({ theme }) => theme.textSecondary};
   font-size: 14px;
-  line-height: 20px;
+  line-height: 16px;
   font-weight: 500;
 
   &:before {
