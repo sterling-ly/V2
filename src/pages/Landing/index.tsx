@@ -151,7 +151,13 @@ const LandingButton = styled(BaseButton)`
   border-radius: 24px;
 `
 
-const ButtonCTA = styled(LandingButton)`
+const MigrateButton = styled(BaseButton)`
+  padding: 16px 0px;
+  border-radius: 24px;
+`
+
+const ButtonCTA = styled(MigrateButton)`
+  margin: 10px;
   background: linear-gradient(93.06deg, #f05053 2.66%, #844a5a 98.99%);
   border: none;
   color: ${({ theme }) => theme.white};
@@ -161,12 +167,32 @@ const ButtonCTA = styled(LandingButton)`
     box-shadow: 0px 0px 16px 0px #634f98;
   }
 `
+const MigrateCTA = styled(MigrateButton)`
+  margin: 10px;
+  background: linear-gradient(93.06deg, #f05053 2.66%, #844a5a 98.99%);
+  border: none;
+  color: ${({ theme }) => theme.white};
+  transition: ${({ theme }) => `all ${theme.transition.duration.medium} ${theme.transition.timing.ease}`};
 
+  &:hover {
+    box-shadow: 0px 0px 16px 0px #634f98;
+  }
+`
+const MigrateCTAText = styled.p`
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: wrap;
+
+  @media screen and (min-width: ${BREAKPOINTS.sm}px) {
+    font-size: 20px;
+  }
+`
 const ButtonCTAText = styled.p`
   margin: 0px;
   font-size: 16px;
   font-weight: 600;
-  white-space: nowrap;
+  white-space: wrap;
 
   @media screen and (min-width: ${BREAKPOINTS.sm}px) {
     font-size: 20px;
@@ -270,6 +296,17 @@ export default function Landing() {
                 <ButtonCTA as={Link} to="/swap">
                   <ButtonCTAText>Enter</ButtonCTAText>
                 </ButtonCTA>
+              </TraceEvent>
+            </ActionsContainer>
+            <ActionsContainer>
+              <TraceEvent
+                events={[BrowserEvent.onClick]}
+                name={SharedEventName.ELEMENT_CLICKED}
+                element={InterfaceElementName.CONTINUE_BUTTON}
+              >
+                <MigrateCTA as={Link} to="">
+                  <MigrateCTAText>Migrate</MigrateCTAText>
+                </MigrateCTA>
               </TraceEvent>
             </ActionsContainer>
           </ContentContainer>
