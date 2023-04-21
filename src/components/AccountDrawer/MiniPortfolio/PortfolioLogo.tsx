@@ -58,8 +58,8 @@ const ENSAvatarImg = styled.img`
 `
 
 const StyledChainLogo = styled.img`
-  height: 14px;
-  width: 14px;
+  height: 45px;
+  width: 20px;
 `
 
 const SquareChainLogo = styled.img`
@@ -68,14 +68,14 @@ const SquareChainLogo = styled.img`
 `
 
 const L2LogoContainer = styled.div<{ $backgroundColor?: string }>`
-  background-color: ${({ $backgroundColor }) => $backgroundColor};
-  border-radius: 2px;
-  height: 16px;
-  left: 60%;
+  background-color: transparent;
+  border-radius: 31px;
+  height: 11px;
+  left: 73%;
   position: absolute;
-  top: 60%;
-  outline: 2px solid ${({ theme }) => theme.backgroundSurface};
-  width: 16px;
+  top: 61%;
+  outline: 0px solid #844a5a;
+  width: 9px;
   display: flex;
   align-items: center;
   justify-content: center;

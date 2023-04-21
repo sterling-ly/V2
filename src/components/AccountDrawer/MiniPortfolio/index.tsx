@@ -61,6 +61,12 @@ interface Page {
 
 const Pages: Array<Page> = [
   {
+    title: <Trans>Migrate</Trans>,
+    key: '',
+    component: NFTs,
+    loggingElementName: '',
+  },
+  {
     title: <Trans>Tokens</Trans>,
     key: 'tokens',
     component: Tokens,
