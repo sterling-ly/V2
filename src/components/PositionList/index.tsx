@@ -53,10 +53,12 @@ const ToggleWrap = styled.div`
 
 const ToggleLabel = styled.button`
   cursor: pointer;
-  background-color: transparent;
-  border: none;
-  color: ${({ theme }) => theme.accentAction};
+  background-color: #634f98;
+  color: #ffff;
   font-size: 1rem;
+  padding: 3px;
+  border-radius: 8px;
+  border-color: #634f98;
 `
 
 type PositionListProps = React.PropsWithChildren<{
@@ -77,27 +79,9 @@ export default function PositionList({
           <Trans>Your positions</Trans>
           {positions && ' (' + positions.length + ')'}
         </div>
-
-        <ToggleLabel
-          id="desktop-hide-closed-positions"
-          onClick={() => {
-            setUserHideClosedPositions(!userHideClosedPositions)
-          }}
-        >
-          {userHideClosedPositions ? <Trans>Show closed positions</Trans> : <Trans>Hide closed positions</Trans>}
-        </ToggleLabel>
       </DesktopHeader>
       <MobileHeader>
         <Trans>Your positions</Trans>
-        <ToggleWrap>
-          <ToggleLabel
-            onClick={() => {
-              setUserHideClosedPositions(!userHideClosedPositions)
-            }}
-          >
-            {userHideClosedPositions ? <Trans>Show closed positions</Trans> : <Trans>Hide closed positions</Trans>}
-          </ToggleLabel>
-        </ToggleWrap>
       </MobileHeader>
       {positions.map((p) => (
         <PositionListItem key={p.tokenId.toString()} {...p} />
