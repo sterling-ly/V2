@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unused-modules */
+/* eslint-disable prettier/prettier */
 import { sendAnalyticsEvent } from '@uniswap/analytics'
 import { InterfaceElementName, InterfaceEventName, SharedEventName } from '@uniswap/analytics-events'
 import { PropsWithChildren, useCallback } from 'react'
@@ -32,8 +34,8 @@ function BaseButton({ onClick, branded, children }: PropsWithChildren<{ onClick?
   )
 }
 
-const APP_STORE_LINK = 'https://apps.apple.com/us/app/uniswap-wallet/id6443944476'
-const MICROSITE_LINK = 'https://wallet.uniswap.org/'
+const APP_STORE_LINK = ''
+const MICROSITE_LINK = ''
 
 const openAppStore = () => {
   window.open(APP_STORE_LINK, /* target = */ 'uniswap_wallet_appstore')
