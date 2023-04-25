@@ -8,9 +8,13 @@ module.exports = {
     {
       // Configuration/typings typically export objects/definitions that are used outside of the transpiled package
       // (eg not captured by the tsconfig). Because it's typical and not exceptional, this is turned off entirely.
+      root: true,
+      extends: '@react-native-community',
+
       files: ['**/*.config.*', '**/*.d.ts'],
       rules: {
         'import/no-unused-modules': 'off',
+        'prettier/prettier': 0,
       },
     },
     {
