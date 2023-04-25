@@ -1,6 +1,4 @@
 import { useWeb3React } from '@web3-react/core'
-import UniwalletModal from 'components/AccountDrawer/UniwalletModal'
-import UniswapWalletBanner from 'components/Banner/UniswapWalletBanner'
 import AddressClaimModal from 'components/claim/AddressClaimModal'
 import ConnectedAccountBlocked from 'components/ConnectedAccountBlocked'
 import useAccountRiskCheck from 'hooks/useAccountRiskCheck'
@@ -25,10 +23,6 @@ export default function TopLevelModals() {
       <AddressClaimModal isOpen={addressClaimOpen} onDismiss={addressClaimToggle} />
       <ConnectedAccountBlocked account={account} isOpen={accountBlocked} />
       <Bag />
-      <UniwalletModal />
-      <UniswapWalletBanner />
-      <TransactionCompleteModal />
-      <AirdropModal />
     </>
   )
 }
